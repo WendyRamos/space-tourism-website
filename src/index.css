@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-barlow: "Barlow Condensed", sans-serif;
+  --font-bellefair: "Bellefair", serif;
+
+  /*Color*/
+  --color-blue-space: #0b0d17;
+  --color-gray-space: #4e5059;
+  --color-sky-blu-space: #d0d6f9;
+}
+
+@utility mask-fade-out {
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
+
+@utility section-container {
+  @apply flex flex-col justify-center md:min-h-[calc(100vh-136px)] items-center  lg:mt-0 lg:mr-0;
+}
