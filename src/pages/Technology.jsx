@@ -18,10 +18,11 @@ function Technology() {
         </h3>
         <article className="flex flex-col lg:flex-row justify-between items-center w-full lg:h-[400px] place-self-center">
           <section className="lg:w-1/2 flex flex-col lg:flex-row items-center gap-6 md:gap-14 h-full order-2 lg:order-1">
-            <nav className="flex lg:flex-col gap-6">
+            <nav className="flex lg:flex-col gap-6" aria-label="Technology selection">
               {technologies.map((_, index) => (
                 <button
                   key={index}
+                  aria-label={`Select ${technologies[index].name}`}
                   onClick={() => setActiveTechnology(technologies[index].name)}
                   className={`w-[40px] h-[40px] md:w-[70px] md:h-[70px] rounded-full border-1 border-gray-space cursor-pointer text-lg md:text-3xl font-bellefair
                     ${activeTechnology === technologies[index].name ? "bg-white text-blue-space" : "hover:border-white"}`}

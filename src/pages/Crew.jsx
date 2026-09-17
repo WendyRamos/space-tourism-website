@@ -31,10 +31,11 @@ function Crew() {
                     {currentCrew.bio}
                   </p>
                 </div>
-                <nav className="flex justify-center lg:justify-start ">
+                <nav className="flex justify-center lg:justify-start " aria-label="Crew member selection">
                   {crews.map((_, index) => (
                     <button
                       key={index}
+                      aria-label={`Select ${crews[index].name}`}
                       onClick={() => setActiveCrew(crews[index].name)}
                       className={`w-3 h-3 rounded-full transition-all duration-300 ml-1 mr-5
                                   ${activeCrew === crews[index].name ? "bg-white scale-125 cursor-pointer" : "bg-white/20 hover:bg-white/50 cursor-pointer"}`}

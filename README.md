@@ -1,13 +1,30 @@
-# Space Tourism Website - Solution
+# Space Tourism Website
 
-Este es mi resultado para el reto de [Frontend Mentor](https://www.frontendmentor.io/). 
+Sitio web responsive de turismo espacial desarrollado con React, Tailwind CSS y React Router, basado en el desafío Space Tourism de Frontend Mentor.
+
+## Tecnologías
+
+- React
+- React Router
+- Tailwind CSS
+- Vite
+
+## Características
+
+- Diseño responsive para dispositivos móviles, tablets y escritorio.
+- Navegación entre las diferentes secciones mediante React Router.
+- Renderizado dinámico de contenido.
+- Controles interactivos accesibles.
+- Estructura basada en HTML semántico.
+- Metadatos orientados a SEO.
+- Optimización de imágenes y recursos.
 
 ## Demo
 
-### Tecnologías usadas:
-- React + Vite
-- Tailwind CSS
-- React Router
+[Ver proyecto](TU_LINK_AQUI)
 
-### Lo que aplique:
-- Responsive design.
+## Instalación
+
+```bash
+npm install
+npm run dev
