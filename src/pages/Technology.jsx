@@ -18,10 +18,13 @@ function Technology() {
         </h3>
         <article className="flex flex-col lg:flex-row justify-between items-center w-full lg:h-[400px] place-self-center">
           <section className="lg:w-1/2 flex flex-col lg:flex-row items-center gap-6 md:gap-14 h-full order-2 lg:order-1">
-            <nav className="flex lg:flex-col gap-6" aria-label="Technology selection">
+            <nav
+              className="flex lg:flex-col gap-6"
+              aria-label="Technology selection"
+            >
               {technologies.map((_, index) => (
                 <button
-                  key={index}
+                  key={technologies[index].name}
                   aria-label={`Select ${technologies[index].name}`}
                   onClick={() => setActiveTechnology(technologies[index].name)}
                   className={`w-[40px] h-[40px] md:w-[70px] md:h-[70px] rounded-full border-1 border-gray-space cursor-pointer text-lg md:text-3xl font-bellefair
@@ -43,7 +46,31 @@ function Technology() {
               </p>
             </div>
           </section>
-          <figure className="lg:w-1/2 flex lg:justify-end order-1 lg:order-2">
+          <picture className="lg:w-1/2 flex lg:justify-end order-1 lg:order-2">
+            {/* Desktop: 1024px o más */}
+            <source
+              media="(min-width: 1024px)"
+              srcSet={
+                new URL(
+                  `../assets/technology/${currentTechnology.images.portrait.split("/").pop()}`,
+                  import.meta.url,
+                ).href
+              }
+            />
+
+            {/* Tablet: 768px - 1023px */}
+            <source
+              media="(min-width: 768px) and (max-width: 1023px)"
+              srcSet={
+                new URL(
+                  `../assets/technology/${currentTechnology.images.landscape.split("/").pop()}`,
+                  import.meta.url,
+                ).href
+              }
+              className="py-9"
+            />
+
+            {/* Mobile: menos de 768px */}
             <img
               src={
                 new URL(
@@ -52,19 +79,9 @@ function Technology() {
                 ).href
               }
               alt={currentTechnology.name}
-              className=" md:hidden lg:block py-6 lg:py-0"
+              className="py-6"
             />
-            <img
-              src={
-                new URL(
-                  `../assets/technology/${currentTechnology.images.landscape.split("/").pop()}`,
-                  import.meta.url,
-                ).href
-              }
-              alt={currentTechnology.name}
-              className="hidden md:block lg:hidden py-9"
-            />
-          </figure>
+          </picture>
         </article>
       </main>
     </div>

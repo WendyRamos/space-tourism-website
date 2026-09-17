@@ -39,27 +39,30 @@ function Navbar() {
         </ul>
       </nav>
 
-      <figure
+      <button
+        aria-label="Open Menu"
+        aria-expanded={isOpen}
+        aria-controls="mobile-menu"
         className="md:hidden mr-8 flex items-center justify-center cursor-pointer z-[100]"
         onClick={() => setIsOpen(true)}
       >
         <img src={menuHamburguer} alt="Open Menu" className="w-[32px]" />
-      </figure>
+      </button>
 
       <div
         className={`fixed top-0 right-0 h-full w-[70%] bg-white/5 backdrop-blur-2xl z-[100] transition-transform duration-500 ease-in-out md:hidden ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         {/* Botón de cerrar dentro del menú */}
-        <div className="flex justify-end p-8">
+        <button className="flex justify-end p-8" aria-label="Close Menu">
           <img
             src={iconClose}
             alt="Close Menu"
             className="w-[20px] cursor-pointer"
             onClick={() => setIsOpen(false)}
           />
-        </div>
+        </button>
 
-        <nav className="mt-16">
+        <nav className="mt-16" id="mobile-menu">
           <ul className="flex flex-col gap-8">
             {links.map((link) => (
               <li key={link.id} className="w-full">
